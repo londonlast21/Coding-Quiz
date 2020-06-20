@@ -3,29 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <script type="text/javascript" src="./script.js"></script>
     <title>Code Quiz</title>
 </head>
 <body>
+    <style>
+        #frame001 {
+            background-color: white;
+            border: 4px solid black;
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
 
-    <header>
-        <p>High Scores</p>
-    </header>
+        .buttons001 {
+            background-color:bisque;
+            color:black;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 50px;
+        }
 
-    <!--this is where the questions will generate-->
-    <div class="quiz-container">
-        <div id="quiz"></div>
-    </div>
+        .buttons002 {
+            background-color:cornflowerblue;
+            color:cornsilk;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 50px;
+        }
 
-    <button id="previous">Previous Question</button>
-    <button id="next">Next Question</button>
+        #text001 {
+            text-align: center;
+        }
 
-    <!--this is the submit button-->
-    <button id="submit">Enter</button>
+        #text002 {
+            text-align: left;
+        }
 
-    <!--this is where answers will display-->
-    <div id="results"></div>
-    
+        #green001 {
+            color: green;
+        }
+
+        #red001 {
+            color: red;
+        }
+    </style>
+    <div id="frame001">
+        <div id="text001">
+            <h2>Quiz</h2>
+            <p>Question: <text id="number001">0</text></p>
+            <p>Score:<text id="score001">0</text></p>
+        <hr />
+                 <div id="message001">Click Begin to Start</div>
+            </div>
+        <div id="text002">
+        <div id="question001"></div>
+        <div id="option001"></div>
+        <div id="option002"></div>
+        <div id="option003"></div>
+        <div id="option004"></div>
+        <div id="answer001"></div>
+        </div>
+        <div id="text001">
+            <div id="disappear001"><button class="buttons001" onclick="begin001()">Begin</button></div>
+        </div>
+
+
+        
+
+        
+
+     
 </body>
 </html>
