@@ -7,18 +7,32 @@
 </head>
 <body>
     <style>
-        .h2{
+        h2 {
+            font-size: 32px;
             color: lightseagreen;
 
         }
         #scoreBoard {
             text-align: center;
+            border: 4px solid #000;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
         }
         #topPlayer {
+            font-size: 30px;
+            margin: 5px;
+            padding: 5px;
 
         }
 
         #topScore {
+            font-size: 26px;
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 5px;
+            color:purple;
+            width: 100px;
 
         }
     </style>
@@ -47,8 +61,14 @@
         var score = localStorage.getItem("highscore");
         var name = localStorage.getItem("user");
         
+
         topPlayer.textContent = name;
+
         topScore.textContent = score;
+      
+        
+
+
 
         document.getElementById('reset-btn').onclick = function(){
             localStorage.clear();
