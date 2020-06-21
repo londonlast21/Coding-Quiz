@@ -14,22 +14,56 @@
         #scoreBoard {
             text-align: center;
         }
+        #topPlayer {
+
+        }
+
+        #topScore {
+
+        }
     </style>
 
     <div id=scoreBoard>
         <h2>Top Score:</h2>
     
-        <div class=topScore>
+        <div id=topPlayer>
+            
         </div>
+
+        <div id=topScore>
+        </div>
+
+        <button id = reset-btn>Reset</button>
+        
 
         <a href="index.html">
             <h3>Back</h3>
         </a>
 
     </div>
-    <script>
-        topScore.textContent
-    </script>
     
+    <script> 
+
+        var score = localStorage.getItem("highscore");
+        var name = localStorage.getItem("user");
+        
+        topPlayer.textContent = name;
+        topScore.textContent = score;
+
+        document.getElementById('reset-btn').onclick = function(){
+            localStorage.clear();
+            topPlayer.textContent = "";
+            topScore.textContent = "";
+        }
+        
+        
+        
+    
+            
+        console.log(localStorage.getItem("user"));
+        console.log(localStorage.getItem("highscore"));
+
+
+   </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
             height: auto;
             border-radius: 10px;
             padding: 10px;
-            margin: 10px;
+            margin: auto;
         }
 
         .buttons001 {
@@ -50,6 +50,10 @@
         #red001 {
             color: red;
         }
+
+        #message001 {
+            padding: 5px;
+        }
     </style>
     <p><a href="highscore.html">High Score</a></p>
     <p id="highscore"></p>
@@ -60,7 +64,11 @@
             <p>Correct:<text id="score001">0</text><br /></p>
             <p>Time:<text id="time001">200</text><br /></p>
         <hr />
-                <div id="message001">Click Begin to Start</div>
+                <div id="message001">
+                    Click Begin to Start<br />
+                    Wrong answers will subtract time<br />
+                    Highest player's score will be saved 
+                </div>
             </div>
         <div id="text002">
             <div id="question001"></div>
@@ -245,7 +253,7 @@
                     //store input as var
 
                 localStorage.setItem("user", userName);
-                highscore.innerHTML = "user: " + c;
+                //highscore.innerHTML = "user: " + c;
 
             }
             message001.innerHTML = "End of Quiz";
