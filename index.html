@@ -127,7 +127,8 @@
             option003.innerHTML = "";
             option004.innerHTML = "";
             next001.innerHTML = "<button class=buttons001 onclick=new002()>Next</button>";
-            
+            c -= 25;
+            //func to subtract 20 sec from timer
         }
 
         function q1c() {
@@ -158,6 +159,7 @@
             option003.innerHTML = "";
             option004.innerHTML = "";
             next001.innerHTML = "<button class=buttons001 onclick=new003()>Next</button>";
+            c -= 25;
             
         }
 
@@ -189,7 +191,7 @@
             option003.innerHTML = "";
             option004.innerHTML = "";
             next001.innerHTML = "<button class=buttons001 onclick=new004()>Next</button>";
-            
+            c -= 25;
         }
 
         function q3c() {
@@ -214,13 +216,13 @@
         }
 
         function q4i() {
-            answer001.innerHTML = "<div id=red001>" + r[3] + "</div>";
+            answer001.innerHTML = "<div id=red001>" + i[3] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
             option004.innerHTML = "";
             next001.innerHTML = "<button class=buttons001 onclick=new005()>End</button>";
-            
+            c -= 25;
         }
 
         function q4c() {
@@ -238,12 +240,12 @@
             window.clearInterval(update);
             if (c > localStorage.getItem("highscore")) {
                 localStorage.setItem("highscore", c);
-                 prompt("Enter Username");
+                let userName = prompt("Enter Username");
                 //prompt
                     //store input as var
 
-                localStorage.setItem("username", userName);
-                highscore.innerHTML = "username: " + c;
+                localStorage.setItem("user", userName);
+                highscore.innerHTML = user + ": " + c;
 
             }
             message001.innerHTML = "End of Quiz";
