@@ -51,6 +51,8 @@
             color: red;
         }
     </style>
+    <p>High Scores</p>
+    <p id="highscore"></p>
     <div id="frame001">
         <div id="text001">
             <h2>Coding Quiz</h2>
@@ -102,12 +104,11 @@
         n++;
         var s = 0;
         s++; 
-
-        
+        var c = 200;
+        var update;
      
         
          function begin001() {
-            c = 200;
             disappear001.innerHTML = "";
             message001.innerHTML = "";
             question001.innerHTML = q[0];
@@ -116,6 +117,7 @@
             option003.innerHTML = a3[0];
             option004.innerHTML = a4[0];
             number001.innerHTML = n++; 
+            update = setInterval("timer001()", 1000);
         }
 
         function q1i() {
@@ -229,19 +231,31 @@
             option004.innerHTML = "";
             next001.innerHTML = "<button class=buttons001 onclick=new005()>End</button>";
             score001.innerHTML = s++;
+
         }
 
         function new005() {
             window.clearInterval(update);
-            c = "-";
+            if (c > localStorage.getItem("highscore")) {
+                localStorage.setItem("highscore", c);
+                 prompt("Enter Username");
+                //prompt
+                    //store input as var
+
+                localStorage.setItem("username", userName);
+                highscore.innerHTML = "username: " + c;
+
+            }
             message001.innerHTML = "End of Quiz";
             question001.innerHTML = "";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
             option004.innerHTML = "";
+
             next001.innerHTML = "<div id=text001>" + "<button class=buttons001 onclick=repeat001()>Repeat</button>" + "</div>";
             answer001.innerHTML = "";
+            console.log();
         }
 
         function timer001(){
@@ -260,8 +274,6 @@
                 answer001.innerHTML = "";
             }
         }
-
-        update = setInterval("timer001()", 1000);
 
         function repeat001() {
             location.reload();
