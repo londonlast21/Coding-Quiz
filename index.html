@@ -51,7 +51,7 @@
             color: red;
         }
     </style>
-    <p>High Scores</p>
+    <p><a href="highscore.html">High Score</a></p>
     <p id="highscore"></p>
     <div id="frame001">
         <div id="text001">
@@ -245,7 +245,7 @@
                     //store input as var
 
                 localStorage.setItem("user", userName);
-                highscore.innerHTML = user + ": " + c;
+                highscore.innerHTML = "user: " + c;
 
             }
             message001.innerHTML = "End of Quiz";
