@@ -53,9 +53,9 @@
     </style>
     <div id="frame001">
         <div id="text001">
-            <h2>Quiz</h2>
+            <h2>Coding Quiz</h2>
             <p>Question: <text id="number001">0</text></p>
-            <p>Score:<text id="score001">0</text><br /></p>
+            <p>Correct:<text id="score001">0</text><br /></p>
             <p>Time:<text id="time001">200</text><br /></p>
         <hr />
                 <div id="message001">Click Begin to Start</div>
@@ -95,13 +95,15 @@
                  "<button class=buttons002 onclick=q3c()>style</button>",
                  "<button class=buttons002 onclick=q4i()>more/less</button>"];
 
-        var c = ["Correct", "Correct", "Correct", "Correct"];
+        var r = ["Correct", "Correct", "Correct", "Correct"];
         var i = ["Incorrect", "Incorrect", "Incorrect", "Incorrect"];
 
         var n = 0;
         n++;
         var s = 0;
         s++; 
+
+        
      
         
          function begin001() {
@@ -127,7 +129,7 @@
         }
 
         function q1c() {
-            answer001.innerHTML = "<div id=green001>" + c[0] + "</div>";
+            answer001.innerHTML = "<div id=green001>" + r[0] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
@@ -158,7 +160,7 @@
         }
 
         function q2c() {
-            answer001.innerHTML = "<div id=green001>" + c[1] + "</div>";
+            answer001.innerHTML = "<div id=green001>" + r[1] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
@@ -189,7 +191,7 @@
         }
 
         function q3c() {
-            answer001.innerHTML = "<div id=green001>" + c[2] + "</div>";
+            answer001.innerHTML = "<div id=green001>" + r[2] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
@@ -210,7 +212,7 @@
         }
 
         function q4i() {
-            answer001.innerHTML = "<div id=red001>" + i[3] + "</div>";
+            answer001.innerHTML = "<div id=red001>" + r[3] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
@@ -220,7 +222,7 @@
         }
 
         function q4c() {
-            answer001.innerHTML = "<div id=green001>" + c[3] + "</div>";
+            answer001.innerHTML = "<div id=green001>" + r[3] + "</div>";
             option001.innerHTML = "";
             option002.innerHTML = "";
             option003.innerHTML = "";
@@ -230,6 +232,8 @@
         }
 
         function new005() {
+            window.clearInterval(update);
+            c = "-";
             message001.innerHTML = "End of Quiz";
             question001.innerHTML = "";
             option001.innerHTML = "";
@@ -247,6 +251,13 @@
             }
             if (c < 1) {
                 window.clearInterval(update);
+                message001.innerHTML = "Time Out";
+                option001.innerHTML = "";
+                option002.innerHTML = "";
+                option003.innerHTML = "";
+                option004.innerHTML = "";
+                next001.innerHTML = "<div id=text001>" + "<button class=buttons001 onclick=repeat001()>Repeat</button>" + "</div>";
+                answer001.innerHTML = "";
             }
         }
 
